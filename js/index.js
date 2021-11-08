@@ -1,7 +1,7 @@
 let today = new Date();
 
 let thisYear = today.getFullYear();
-console.log(thisYear);
+// console.log(thisYear);
 
 let footer = document.querySelector("footer");
 
@@ -14,15 +14,29 @@ footer.appendChild(copyright);
 let skills = ["Ruby", "Front-end", "React", "Javascript"];
 
 let skillsSection = document.getElementById("skills");
-const unorderedList = document.createElement('ul')
 
-
+let skillsList = skillsSection.querySelector("ul");
 
 for (let i = 0; i < skills.length; i++) {
-  const skill = document.createElement("li");
+  let skill = document.createElement("li");
   skill.innerText = skills[i];
-  console.log(skill);
- unorderedList.appendChild(skill);
+  skillsList.appendChild(skill);
 }
 
-skillsSection.appendChild(unorderedList)
+const messageForm = document.querySelectorAll("leave_message")
+
+messageForm.addEventListener("submit", (e) => {
+
+  console.log(input.value);
+    e.preventDefault();
+});
+
+
+// messageForm.addEventListener('submit', function messageSubmit(event){
+//     const name = event.target.name
+//     const email = event.target.email
+//     const message = event.target.message
+//     console.log(name, email, message)
+//     event.preventDefault()
+
+// })
